@@ -13,7 +13,7 @@ function ArtistPage() {
   const navigate = useNavigate();
   const { currentTrack, isPlaying, playTrack, togglePlay, likedTrackIds, toggleLike } = usePlayer();
 
-  // Find the artist by id, fallback to first artist if not matched
+ 
   const artist = artists.find((a) => a.id === id) || artists[0];
 
   const [isFollowing, setIsFollowing] = useState(false);
@@ -57,7 +57,7 @@ function ArtistPage() {
         <Sidebar />
 
         <main className="artist-main-content">
-          {/* Top navigation back button */}
+         
           <div className="artist-nav-bar">
             <button
               className="back-circle-btn"
@@ -69,7 +69,7 @@ function ArtistPage() {
             </button>
           </div>
 
-          {/* Hero Header Banner */}
+      
           <div
             className="artist-hero-header"
             style={{
@@ -96,7 +96,7 @@ function ArtistPage() {
             </div>
           </div>
 
-          {/* Action Bar */}
+          
           <div className="artist-action-bar">
             <button
               className="big-play-btn"
@@ -122,7 +122,7 @@ function ArtistPage() {
             </button>
           </div>
 
-          {/* Popular Songs Section */}
+         
           <section className="artist-popular-section">
             <h2 className="section-title">Popular</h2>
 
@@ -206,7 +206,7 @@ function ArtistPage() {
             </div>
           </section>
 
-          {/* About Artist Section */}
+         
           <section className="artist-about-section">
             <h2 className="section-title">About</h2>
             <div

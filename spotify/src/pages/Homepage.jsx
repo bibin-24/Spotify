@@ -31,7 +31,7 @@ function HomePage() {
         <Sidebar />
 
         <main className="home-main-content">
-          {/* 1. Trending Songs */}
+        
           <section className="spotify-shelf">
             <div className="shelf-header">
               <h2>Trending songs</h2>
@@ -50,7 +50,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* 2. Popular Artists */}
+         
           <section className="spotify-shelf">
             <div className="shelf-header">
               <h2>Popular artists</h2>
@@ -63,7 +63,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* 3. Popular Albums and Singles */}
+         
           <section className="spotify-shelf">
             <div className="shelf-header">
               <h2>Popular albums and singles</h2>
@@ -89,7 +89,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* 4. Popular Radio */}
+         
           <section className="spotify-shelf">
             <div className="shelf-header">
               <h2>Popular radio</h2>
@@ -127,7 +127,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* 5. Featured Charts */}
+          
           <section className="spotify-shelf">
             <div className="shelf-header">
               <h2>Featured Charts</h2>
@@ -155,7 +155,7 @@ function HomePage() {
             </div>
           </section>
 
-          {/* Page Footer */}
+      
           <Footer />
         </main>
       </div>

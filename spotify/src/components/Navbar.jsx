@@ -28,7 +28,7 @@ function Navbar() {
 
   return (
     <header className="spotify-navbar">
-      {/* Mobile Toggle */}
+    
       <button
         className="mobile-nav-toggle"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -37,7 +37,7 @@ function Navbar() {
         {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
 
-      {/* Spotify Logo */}
+  
       <div
         className="spotify-logo-btn"
         onClick={() => navigate("/")}
@@ -50,7 +50,7 @@ function Navbar() {
         </svg>
       </div>
 
-      {/* Home Round Button */}
+      
       <button
         className="spotify-home-btn"
         onClick={() => navigate("/")}
@@ -60,7 +60,7 @@ function Navbar() {
         <Home size={22} />
       </button>
 
-      {/* Search Input Box with Browse Toggle */}
+
       <div className="spotify-search-bar">
         <Search size={22} className="search-icon" />
         <input
@@ -81,7 +81,7 @@ function Navbar() {
 
       {/* Top Right Links */}
       <nav className={`spotify-nav-right ${mobileMenuOpen ? "open" : ""}`}>
-        {/* Quiz Feature Button placed before Premium */}
+       
         <button
           className="nav-quiz-pill"
           onClick={() => {
@@ -116,7 +116,7 @@ function Navbar() {
 
         <div className="nav-vertical-line"></div>
 
-        {/* Install App Link */}
+      
         <Link
           to="/install"
           className="nav-install-link"
@@ -126,7 +126,7 @@ function Navbar() {
           <span>Install App</span>
         </Link>
 
-        {/* Auth Section */}
+        
         {currentUser ? (
           <div className="nav-user-wrap">
             <button

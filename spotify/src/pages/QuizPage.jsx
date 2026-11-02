@@ -37,19 +37,19 @@ import {
 } from "../utils/audioSynth";
 import "./QuizPage.css";
 
-const QUESTION_TIME_LIMIT = 20; // seconds per question
+const QUESTION_TIME_LIMIT = 20; 
 
 function QuizPage() {
   const navigate = useNavigate();
 
-  // Screen state: "lobby" | "playing" | "results"
+ 
   const [gameState, setGameState] = useState("lobby");
 
-  // Leaderboard state
+
   const [leaderboard, setLeaderboard] = useState(initialLeaderboard);
   const [playerName, setPlayerName] = useState("MusicFan_01");
 
-  // Quiz game state
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -65,7 +65,7 @@ function QuizPage() {
   const timerRef = useRef(null);
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
-  // Play audio clip for current question
+ 
   const playQuestionAudio = useCallback((qIndex) => {
     stopCurrentAudio();
     if (isMuted) return;
@@ -78,17 +78,17 @@ function QuizPage() {
     }
   }, [isMuted]);
 
-  // Handle timeout (time ran out before user answered)
+ 
   const handleTimeOut = useCallback(() => {
     setIsAnswered(true);
-    setSelectedOption(-1); // -1 indicates timeout
+    setSelectedOption(-1); 
     setStreak(0);
     if (!isMuted) playWrongSound();
     stopCurrentAudio();
     setIsPlayingAudio(false);
   }, [isMuted]);
 
-  // Start new game
+  
   const startGame = () => {
     setGameState("playing");
     setCurrentQuestionIndex(0);
@@ -102,7 +102,7 @@ function QuizPage() {
     playQuestionAudio(0);
   };
 
-  // Handle countdown timer during game
+
   useEffect(() => {
     if (gameState !== "playing" || isAnswered) return;
 
@@ -120,7 +120,7 @@ function QuizPage() {
     return () => clearInterval(timerRef.current);
   }, [gameState, isAnswered, currentQuestionIndex, handleTimeOut]);
 
-  // Handle option selection
+ 
   const handleSelectOption = (index) => {
     if (isAnswered) return;
 
@@ -134,7 +134,7 @@ function QuizPage() {
 
     if (isCorrect) {
       const basePoints = 1000;
-      // Faster answers = bonus points! (⚡ Speed bonus)
+    
       const speedBonus = timeLeft * 40;
       const streakMultiplier = 1 + streak * 0.2;
       const pointsEarned = Math.round((basePoints + speedBonus) * streakMultiplier);
@@ -161,7 +161,7 @@ function QuizPage() {
     }
   };
 
-  // Move to next question or finish
+ 
   const handleNextQuestion = () => {
     setScorePopup(null);
     if (currentQuestionIndex + 1 < quizQuestions.length) {
@@ -176,7 +176,6 @@ function QuizPage() {
     }
   };
 
-  // Complete game and calculate rank
   const finishGame = () => {
     setGameState("results");
     stopCurrentAudio();
@@ -184,7 +183,7 @@ function QuizPage() {
 
     if (!isMuted) playVictorySound();
 
-    // Update leaderboard if user got a score
+   
     setLeaderboard((prev) => {
       const existingUser = prev.find((p) => p.isCurrentUser);
       let updated;
@@ -204,7 +203,6 @@ function QuizPage() {
           },
         ];
       }
-      // Re-sort leaderboard descending
       updated.sort((a, b) => b.score - a.score);
       return updated.map((item, idx) => ({
         ...item,
@@ -215,7 +213,7 @@ function QuizPage() {
     });
   };
 
-  // Clean up audio on unmount
+ 
   useEffect(() => {
     return () => {
       stopCurrentAudio();
@@ -247,7 +245,7 @@ function QuizPage() {
                   A fast music-quiz feature for a Spotify clone
                 </p>
 
-                {/* Player Name Input */}
+                
                 <div className="player-input-row">
                   <span className="player-input-label">Gamer Tag:</span>
                   <input
@@ -260,7 +258,6 @@ function QuizPage() {
                   />
                 </div>
 
-                {/* 30 Sec Challenge Showcase Card */}
                 <div className="challenge-card">
                   <div className="challenge-header">
                     <div className="challenge-tag">
@@ -284,9 +281,8 @@ function QuizPage() {
                 </div>
               </div>
 
-              {/* Grid: How It Works & Leaderboard */}
               <div className="quiz-lobby-grid">
-                {/* How It Works Section */}
+             
                 <div className="quiz-section-box how-it-works-box">
                   <h2 className="box-title">HOW IT WORKS</h2>
                   <div className="steps-grid">
@@ -300,7 +296,6 @@ function QuizPage() {
                   </div>
                 </div>
 
-                {/* Leaderboard & Rewards Section */}
                 <div className="quiz-section-box leaderboard-box">
                   <div className="leaderboard-header">
                     <div>
@@ -336,7 +331,7 @@ function QuizPage() {
                     ))}
                   </div>
 
-                  {/* 1st Place Reward Banner */}
+      
                   <div className="reward-banner">
                     <div className="reward-icon-wrap">
                       <Gift size={24} color="#1ed760" />
@@ -352,7 +347,7 @@ function QuizPage() {
                 </div>
               </div>
 
-              {/* Feature Value Section */}
+          
               <div className="feature-value-section">
                 <div className="feature-value-header">
                   <h3>FEATURE VALUE</h3>
@@ -372,10 +367,10 @@ function QuizPage() {
             </div>
           )}
 
-          {/* ACTIVE QUIZ GAME VIEW */}
+      
           {gameState === "playing" && (
             <div className="quiz-game-container">
-              {/* Game Nav Header */}
+           
               <div className="game-top-bar">
                 <button
                   className="exit-quiz-btn"
@@ -385,7 +380,7 @@ function QuizPage() {
                   <ArrowLeft size={18} /> Exit
                 </button>
 
-                {/* Progress Indicators */}
+             
                 <div className="progress-dots">
                   {quizQuestions.map((q, idx) => (
                     <span
@@ -401,7 +396,7 @@ function QuizPage() {
                   ))}
                 </div>
 
-                {/* Audio Mute Toggle */}
+             
                 <button
                   className="mute-btn"
                   onClick={() => {
@@ -414,7 +409,7 @@ function QuizPage() {
                 </button>
               </div>
 
-              {/* Stats Bar (Score, Streak, Timer) */}
+            
               <div className="game-stats-bar">
                 <div className="stat-card">
                   <span className="stat-label">SCORE</span>
@@ -448,7 +443,7 @@ function QuizPage() {
                 </div>
               </div>
 
-              {/* Time Progress Bar */}
+           
               <div className="timer-bar-container">
                 <div
                   className={`timer-bar-fill ${
@@ -460,7 +455,6 @@ function QuizPage() {
                 ></div>
               </div>
 
-              {/* Question Audio Box */}
               <div className="question-audio-card">
                 <div className="audio-left">
                   <button
@@ -523,7 +517,7 @@ function QuizPage() {
                 )}
               </div>
 
-              {/* Score Popup Notification */}
+          
               {scorePopup && (
                 <div
                   className={`score-popup ${
@@ -534,7 +528,7 @@ function QuizPage() {
                 </div>
               )}
 
-              {/* 4 Multiple Choice Options */}
+        
               <div className="options-grid">
                 {currentQuestion.options.map((option, idx) => {
                   let btnStateClass = "";
@@ -572,7 +566,7 @@ function QuizPage() {
                 })}
               </div>
 
-              {/* Next Question / Explanation Footer */}
+             
               {isAnswered && (
                 <div className="question-footer">
                   <p className="trivia-text">
@@ -597,7 +591,7 @@ function QuizPage() {
             </div>
           )}
 
-          {/* RESULTS VIEW */}
+          
           {gameState === "results" && (
             <div className="quiz-results-container">
               <div className="results-card">
@@ -614,7 +608,6 @@ function QuizPage() {
                     : "Good effort! Try again to boost your score and win!"}
                 </p>
 
-                {/* Score Summary Row */}
                 <div className="results-stats-row">
                   <div className="res-stat-box">
                     <span className="res-label">FINAL SCORE</span>
@@ -645,7 +638,7 @@ function QuizPage() {
                   </div>
                 </div>
 
-                {/* 1st Place / Reward Notice */}
+             
                 {leaderboard[0]?.isCurrentUser ? (
                   <div className="winner-reward-alert">
                     <Award size={28} color="#1ed760" />
@@ -665,7 +658,7 @@ function QuizPage() {
                   </div>
                 )}
 
-                {/* Updated Leaderboard */}
+               
                 <div className="results-leaderboard-box">
                   <h3>CURRENT LEADERBOARD</h3>
                   <div className="leaderboard-list">
@@ -691,7 +684,7 @@ function QuizPage() {
                   </div>
                 </div>
 
-                {/* Action Buttons */}
+             
                 <div className="results-actions">
                   <button className="play-again-btn" onClick={startGame}>
                     <RotateCcw size={18} /> Play Again

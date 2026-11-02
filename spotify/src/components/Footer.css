@@ -107,9 +107,7 @@
   font-size: 13px;
 }
 
-/* =========================================================
-   RESPONSIVE FOOTER
-========================================================= */
+
 @media (max-width: 1024px) {
   .footer-top-grid {
     grid-template-columns: repeat(2, 1fr) auto;

@@ -73,7 +73,7 @@ function FooterPlayer() {
         ></div>
       </div>
 
-      {/* LEFT: Current Track Info */}
+  
       <div className="player-left">
         <img
           src={currentTrack.image}
@@ -102,7 +102,7 @@ function FooterPlayer() {
         </button>
       </div>
 
-      {/* CENTER: Player Controls & Timeline */}
+     
       <div className="player-center">
         <div className="player-controls">
           <button
@@ -155,7 +155,7 @@ function FooterPlayer() {
           </button>
         </div>
 
-        {/* Playback Timeline */}
+       
         <div className="playback-bar">
           <span className="time-text">{formatTime(currentTime)}</span>
           <div

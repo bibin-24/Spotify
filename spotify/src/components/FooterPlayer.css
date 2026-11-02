@@ -14,7 +14,7 @@
   user-select: none;
 }
 
-/* Mobile top thin progress bar */
+
 .mobile-mini-progress {
   display: none;
   position: absolute;
@@ -31,9 +31,7 @@
   transition: width 0.2s linear;
 }
 
-/* =========================================================
-   LEFT: Track Details
-========================================================= */
+
 .player-left {
   display: flex;
   align-items: center;
@@ -101,9 +99,7 @@
   transform: scale(1.15);
 }
 
-/* =========================================================
-   CENTER: Controls & Timeline
-========================================================= */
+
 .player-center {
   display: flex;
   flex-direction: column;
@@ -239,9 +235,7 @@
   opacity: 1;
 }
 
-/* =========================================================
-   RIGHT: Extra utilities & Volume
-========================================================= */
+
 .player-right {
   display: flex;
   align-items: center;
@@ -318,9 +312,7 @@
   opacity: 1;
 }
 
-/* =========================================================
-   RESPONSIVE DESIGN FOR PLAYER
-========================================================= */
+
 @media (max-width: 860px) {
   .player-right .extra-btn {
     display: none;

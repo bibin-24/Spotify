@@ -1,9 +1,13 @@
+
+
 .home-page-container {
   min-height: 100vh;
   background-color: #000000;
   color: #ffffff;
   padding-bottom: 72px;
   box-sizing: border-box;
+  margin: -10px;
+  
 }
 
 .home-layout-grid {
@@ -76,7 +80,7 @@
   gap: 16px;
 }
 
-/* Song Card Item */
+
 .song-card {
   padding: 12px;
   border-radius: 8px;
@@ -162,7 +166,7 @@
   white-space: nowrap;
 }
 
-/* Album Card Item */
+
 .album-card-item {
   background-color: #181818;
   border-radius: 8px;
@@ -243,7 +247,7 @@
   white-space: nowrap;
 }
 
-/* Radio Card Item */
+
 .radio-card-item {
   background-color: #181818;
   border-radius: 8px;
