@@ -1,0 +1,432 @@
+.artist-page-container {
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+  padding-bottom: 82px; /* Space for the bottom player */
+  box-sizing: border-box;
+}
+
+.artist-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 10px;
+  padding: 0 10px;
+  height: calc(100vh - 162px);
+}
+
+.artist-main-content {
+  background-color: #121212;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+/* Custom scrollbar for main content */
+.artist-main-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.artist-main-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+.artist-main-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Top Back Navigation */
+.artist-nav-bar {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  z-index: 10;
+}
+
+.back-circle-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-circle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.08);
+}
+
+/* Hero Header Banner */
+.artist-hero-header {
+  height: 320px;
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 28px 32px;
+  position: relative;
+}
+
+.artist-hero-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.verified-icon {
+  color: #3d91f4;
+  fill: #3d91f4;
+}
+
+.artist-hero-title {
+  font-size: clamp(32px, 5vw, 68px);
+  font-weight: 900;
+  margin: 4px 0 8px 0;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.monthly-listeners {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Action Controls Bar */
+.artist-action-bar {
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.big-play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #1ed760;
+  color: #000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.big-play-btn:hover {
+  transform: scale(1.06);
+  background-color: #1fdf64;
+}
+
+.follow-btn {
+  border: 1px solid #727272;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.follow-btn:hover {
+  border-color: #ffffff;
+  transform: scale(1.04);
+}
+
+.follow-btn.following {
+  border-color: #1ed760;
+  color: #1ed760;
+}
+
+.more-btn {
+  background: transparent;
+  color: #b3b3b3;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.more-btn:hover {
+  color: #ffffff;
+}
+
+/* Popular Tracks Section */
+.artist-popular-section {
+  padding: 0 32px 36px 32px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  color: #ffffff;
+}
+
+.tracks-table {
+  width: 100%;
+}
+
+.tracks-table-header {
+  display: grid;
+  grid-template-columns: 48px 4fr 3fr 120px;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #b3b3b3;
+  font-size: 14px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.tracks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-row {
+  display: grid;
+  grid-template-columns: 48px 4fr 3fr 120px;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #b3b3b3;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.track-row:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.track-row.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.col-num {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.track-play-icon {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.track-row:hover .track-number {
+  display: none;
+}
+
+.track-row:hover .track-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-row.active .track-number {
+  display: none;
+}
+
+.track-row.active .track-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.track-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.track-names {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.track-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-name.active-text {
+  color: #1ed760;
+}
+
+.track-album {
+  font-size: 13px;
+  color: #b3b3b3;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.col-plays {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.col-duration {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+.track-heart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.track-row:hover .track-heart-btn,
+.track-heart-btn.liked {
+  opacity: 1;
+}
+
+.track-heart-btn:hover {
+  transform: scale(1.15);
+}
+
+/* About Section */
+.artist-about-section {
+  padding: 0 32px 20px;
+}
+
+.about-card {
+  max-width: 680px;
+  height: 260px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.about-card:hover {
+  transform: scale(1.01);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-listeners {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.about-bio {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #dddddd;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN FOR ARTIST PAGE
+========================================================= */
+@media (max-width: 900px) {
+  .artist-layout {
+    grid-template-columns: 280px 1fr;
+  }
+  .col-plays {
+    display: none;
+  }
+  .tracks-table-header,
+  .track-row {
+    grid-template-columns: 40px 1fr 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-layout {
+    grid-template-columns: 1fr;
+    padding: 0 6px;
+    height: calc(100vh - 150px);
+  }
+  .artist-hero-header {
+    height: 240px;
+    padding: 20px;
+  }
+  .artist-hero-title {
+    font-size: 32px;
+  }
+  .artist-action-bar {
+    padding: 16px 20px;
+    gap: 16px;
+  }
+  .artist-popular-section,
+  .artist-about-section {
+    padding: 0 16px 24px;
+  }
+}

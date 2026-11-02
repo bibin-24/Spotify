@@ -1,0 +1,151 @@
+.install-page-container {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  padding-bottom: 72px;
+  box-sizing: border-box;
+}
+
+.install-page-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 8px;
+  padding: 0 8px;
+  height: calc(100vh - 146px);
+}
+
+.install-main-content {
+  background-color: #121212;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.install-main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.install-main-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.install-hero-card {
+  margin: 16px 20px 32px 20px;
+  background: linear-gradient(135deg, #719b83 0%, #a8a098 50%, #d896b5 100%);
+  border-radius: 12px;
+  padding: 48px 36px 0 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  box-sizing: border-box;
+
+}
+
+.install-spotify-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.install-hero-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  margin: 0 0 16px 0;
+  color: #000000;
+  letter-spacing: -1px;
+}
+
+.install-hero-desc {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #1a1a1a;
+  max-width: 660px;
+  margin: 0 0 28px 0;
+}
+
+.ms-store-btn {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  margin-bottom: 16px;
+}
+
+.ms-store-btn:hover {
+  transform: scale(1.03);
+  background-color: #2b2b2b;
+}
+
+.ms-icon-grid {
+  display: grid;
+  grid-template-columns: 10px 10px;
+  gap: 2px;
+}
+
+.ms-icon-grid span {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+.ms-red { background-color: #f25022; }
+.ms-green { background-color: #7fba00; }
+.ms-blue { background-color: #00a4ef; }
+.ms-yellow { background-color: #ffb900; }
+
+.ms-btn-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ms-btn-text small {
+  font-size: 11px;
+  color: #b3b3b3;
+}
+
+.ms-btn-text strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.install-direct-link {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 36px;
+  cursor: pointer;
+}
+
+.install-direct-link:hover {
+  color: #222222;
+}
+
+
+.MicroImg img{
+  width: 40rem;
+  
+  }
+
+@media (max-width: 900px) {
+  .install-page-layout {
+    grid-template-columns: 1fr;
+  }
+}

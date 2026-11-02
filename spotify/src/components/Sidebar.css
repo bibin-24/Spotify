@@ -1,0 +1,150 @@
+.sidebar {
+  background-color: #121212;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 8px;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.library-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.library-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #b3b3b3;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.library-header h2:hover {
+  color: #ffffff;
+}
+
+.add-button {
+  background-color: transparent;
+  color: #b3b3b3;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.add-button:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 6px;
+}
+
+.sidebar-scrollable-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scrollable-content::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.playlist-box {
+  background-color: #242424;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playlist-box h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.playlist-box p {
+  font-size: 13px;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+}
+
+.create-button {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform 0.15s ease;
+}
+
+.create-button:hover {
+  transform: scale(1.04);
+}
+
+.sidebar-footer {
+  padding: 16px 12px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.legal-links a {
+  font-size: 11px;
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+.language-button {
+  align-self: flex-start;
+  background-color: transparent;
+  border: 1px solid #727272;
+  border-radius: 20px;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-button:hover {
+  border-color: #ffffff;
+  transform: scale(1.04);
+}

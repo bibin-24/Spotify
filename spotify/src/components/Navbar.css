@@ -1,0 +1,321 @@
+.spotify-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: #000000;
+  gap: 16px;
+  height: 64px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.spotify-logo-btn {
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.spotify-logo-btn:hover {
+  transform: scale(1.05);
+}
+
+.spotify-home-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1f1f1f;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-home-btn:hover {
+  background-color: #2a2a2a;
+  transform: scale(1.04);
+}
+
+.spotify-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1f1f1f;
+  border-radius: 24px;
+  height: 48px;
+  padding: 0 16px;
+  flex: 1;
+  max-width: 500px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.spotify-search-bar:focus-within {
+  border-color: #ffffff;
+  background-color: #2a2a2a;
+}
+
+.search-icon {
+  color: #b3b3b3;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.spotify-search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+}
+
+.spotify-search-bar input::placeholder {
+  color: #727272;
+}
+
+.search-sep {
+  width: 1px;
+  height: 24px;
+  background-color: #3e3e3e;
+  margin: 0 12px;
+}
+
+.search-browse-toggle {
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.search-browse-toggle:hover {
+  color: #ffffff;
+}
+
+.spotify-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.nav-quiz-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #242424;
+  color: #1ed760;
+  border: 1px solid rgba(30, 215, 96, 0.4);
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-quiz-pill:hover {
+  background-color: rgba(30, 215, 96, 0.15);
+  transform: scale(1.04);
+}
+
+.nav-link-text {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav-link-text:hover {
+  color: #ffffff;
+}
+
+.nav-vertical-line {
+  width: 1px;
+  height: 24px;
+  background-color: #333333;
+}
+
+.nav-install-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav-install-link:hover {
+  color: #ffffff;
+}
+
+.nav-auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.signup-text-btn {
+  color: #b3b3b3;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.signup-text-btn:hover {
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+.login-round-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.login-round-btn:hover {
+  transform: scale(1.04);
+  background-color: #f6f6f6;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* User Profile Pill */
+.nav-user-wrap {
+  position: relative;
+}
+
+.user-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1f1f1f;
+  border: none;
+  padding: 4px 12px 4px 4px;
+  border-radius: 24px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.user-nav-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-dropdown-popover {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background-color: #282828;
+  border-radius: 6px;
+  padding: 6px;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown-user-info {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+}
+
+.dropdown-user-info strong {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.dropdown-user-info span {
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.dropdown-sep {
+  height: 1px;
+  background-color: #383838;
+  margin: 4px 0;
+}
+
+.dropdown-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.dropdown-action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .spotify-navbar {
+    padding: 8px 12px;
+  }
+  .spotify-search-bar {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  .spotify-nav-right {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: #121212;
+    flex-direction: column;
+    padding: 20px;
+    gap: 16px;
+    border-bottom: 1px solid #282828;
+  }
+  .spotify-nav-right.open {
+    display: flex;
+  }
+}

@@ -1,0 +1,369 @@
+.footer-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 82px;
+  background-color: #000000;
+  border-top: 1px solid #282828;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 200;
+  user-select: none;
+}
+
+/* Mobile top thin progress bar */
+.mobile-mini-progress {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+}
+
+.mobile-mini-progress-fill {
+  height: 100%;
+  background-color: #1ed760;
+  transition: width 0.2s linear;
+}
+
+/* =========================================================
+   LEFT: Track Details
+========================================================= */
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 30%;
+  min-width: 180px;
+}
+
+.player-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.player-track-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.player-title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.player-title:hover {
+  text-decoration: underline;
+}
+
+.player-artist {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.player-artist:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.player-heart-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.player-heart-btn:hover {
+  transform: scale(1.15);
+}
+
+/* =========================================================
+   CENTER: Controls & Timeline
+========================================================= */
+.player-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 722px;
+  width: 40%;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+
+.control-btn {
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.control-btn:hover {
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.control-btn.active-green {
+  color: #1ed760 !important;
+  position: relative;
+}
+
+.control-btn.active-green::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  width: 4px;
+  height: 4px;
+  background-color: #1ed760;
+  border-radius: 50%;
+}
+
+.main-play-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.main-play-btn:hover {
+  transform: scale(1.08);
+  background-color: #f2f2f2;
+}
+
+.playback-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.time-text {
+  font-size: 11px;
+  color: #a7a7a7;
+  font-variant-numeric: tabular-nums;
+  min-width: 34px;
+  text-align: center;
+}
+
+.seek-slider-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 12px;
+  cursor: pointer;
+}
+
+.seek-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+
+.seek-slider-wrap:hover .seek-slider {
+  height: 6px;
+}
+
+.seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.seek-slider-wrap:hover .seek-slider::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* Firefox support */
+.seek-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.seek-slider-wrap:hover .seek-slider::-moz-range-thumb {
+  opacity: 1;
+}
+
+/* =========================================================
+   RIGHT: Extra utilities & Volume
+========================================================= */
+.player-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  width: 30%;
+  min-width: 180px;
+}
+
+.extra-btn {
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.extra-btn:hover {
+  color: #ffffff;
+}
+
+.volume-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 125px;
+}
+
+.volume-btn {
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.volume-btn:hover {
+  color: #ffffff;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 90px;
+  height: 4px;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  transition: height 0.15s ease;
+}
+
+.volume-bar-wrap:hover .volume-slider {
+  height: 6px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.volume-bar-wrap:hover .volume-slider::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN FOR PLAYER
+========================================================= */
+@media (max-width: 860px) {
+  .player-right .extra-btn {
+    display: none;
+  }
+  .volume-bar-wrap {
+    width: 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-player {
+    height: 68px;
+    padding: 0 12px;
+  }
+  .mobile-mini-progress {
+    display: block;
+  }
+  .playback-bar {
+    display: none;
+  }
+  .player-right {
+    display: none;
+  }
+  .player-left {
+    width: 70%;
+  }
+  .player-center {
+    width: auto;
+    margin-left: auto;
+  }
+  .player-thumb {
+    width: 44px;
+    height: 44px;
+  }
+  .player-title {
+    font-size: 13px;
+    max-width: 140px;
+  }
+  .player-controls .control-btn {
+    display: none;
+  }
+  .player-controls {
+    margin-bottom: 0;
+  }
+}
+
