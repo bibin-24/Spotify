@@ -76,7 +76,7 @@ function Sidebar() {
 
         </div>
 
-        {/* CREATE PLAYLIST POPUP */}
+        
         {showPlaylistPopup && (
           <div className="playlist-popup">
 

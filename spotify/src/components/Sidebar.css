@@ -151,7 +151,7 @@
   border-color: #ffffff;
   transform: scale(1.04);
 }
-/* ===== CREATE PLAYLIST POPUP ===== */
+
 
 .playlist-popup {
   position: absolute;
@@ -170,7 +170,7 @@
   z-index: 9999;
 }
 
-/* Popup Heading */
+
 
 .playlist-popup h3 {
   font-size: 22px;
@@ -179,7 +179,6 @@
   color: white;
 }
 
-/* Popup Description */
 
 .playlist-popup p {
   font-size: 17px;
@@ -187,7 +186,7 @@
   color: white;
 }
 
-/* Popup Buttons */
+
 
 .popup-buttons {
   display: flex;
@@ -196,7 +195,7 @@
   gap: 18px;
 }
 
-/* Not Now Button */
+
 
 .not-now-button {
   background: transparent;
@@ -211,7 +210,7 @@
   transform: scale(1.05);
 }
 
-/* Login Button */
+
 
 .popup-login-button {
   background-color: white;
@@ -228,7 +227,7 @@
   transform: scale(1.05);
 }
 
-/* Blue Popup Arrow */
+
 
 .playlist-popup::before {
   content: "";
@@ -240,3 +239,11 @@
   border-bottom: 10px solid transparent;
   border-right: 10px solid #0d6bdc;
 }
+
+/* Hide Sidebar on mobile/tablet view */
+@media (max-width: 900px) {
+  .sidebar {
+    display: none !important;
+  }
+}
+

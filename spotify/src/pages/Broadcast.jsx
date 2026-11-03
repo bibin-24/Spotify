@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import "./Broadcast.css";
-import { LogIn } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const BROWSE_CATEGORIES = [
