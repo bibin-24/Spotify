@@ -1,4 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
+
 import { useState, createContext, useContext, useEffect } from "react";
 
 const AuthContext = createContext(null);
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
         localStorage.removeItem("spotify_clone_user");
       }
     } catch {
-      // storage unavailable
+      
     }
   }, [currentUser]);
 
