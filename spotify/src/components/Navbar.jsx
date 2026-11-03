@@ -93,26 +93,12 @@ function Navbar() {
           <Sparkles size={16} />
           <span>Quiz</span>
         </button>
-
-        <a
-          href="https://www.spotify.com/premium/"
-          target="_blank"
-          rel="noreferrer"
-          className="nav-link-text"
-        >
-          Premium
-        </a>
-        <a href="#support" className="nav-link-text">
-          Support
-        </a>
-        <a
-          href="https://www.spotify.com/download/"
-          target="_blank"
-          rel="noreferrer"
-          className="nav-link-text"
-        >
-          Download
-        </a>
+        <Link to='https://www.spotify.com/premium/'className="nav-link-text">Premium</Link>
+        
+        <Link to="https://support.spotify.com/in-en/ "className="nav-link-text">Support</Link>
+        
+        <Link to="https://www.spotify.com/download/" className="nav-link-text"> Download</Link>
+        
 
         <div className="nav-vertical-line"></div>
 

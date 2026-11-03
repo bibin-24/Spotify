@@ -6,7 +6,10 @@
   padding: 12px 8px;
   height: 100%;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 10;
 }
 
 .library-header {
@@ -119,13 +122,13 @@
 }
 
 .legal-links a {
-  font-size: 11px;
+  font-size: 14px;
   color: #b3b3b3;
   text-decoration: none;
 }
 
 .legal-links a:hover {
-  text-decoration: underline;
+  color: white;
 }
 
 .language-button {
@@ -147,4 +150,93 @@
 .language-button:hover {
   border-color: #ffffff;
   transform: scale(1.04);
+}
+/* ===== CREATE PLAYLIST POPUP ===== */
+
+.playlist-popup {
+  position: absolute;
+  top: 115px;
+  left: calc(100% + 8px);
+
+  width: 455px;
+  padding: 22px;
+
+  background-color: #0d6bdc;
+  color: white;
+
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  z-index: 9999;
+}
+
+/* Popup Heading */
+
+.playlist-popup h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  color: white;
+}
+
+/* Popup Description */
+
+.playlist-popup p {
+  font-size: 17px;
+  margin: 0 0 32px;
+  color: white;
+}
+
+/* Popup Buttons */
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Not Now Button */
+
+.not-now-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.not-now-button:hover {
+  transform: scale(1.05);
+}
+
+/* Login Button */
+
+.popup-login-button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.popup-login-button:hover {
+  transform: scale(1.05);
+}
+
+/* Blue Popup Arrow */
+
+.playlist-popup::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 90px;
+
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #0d6bdc;
 }

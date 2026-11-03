@@ -1,5 +1,4 @@
-// // Lightweight Web Audio API Synthesizer for Spotify Music Quiz
-// // Fully client-side, zero network dependencies, 100% reliable across browsers
+
 
 let audioCtx = null;
 let currentMelodyTimeouts = [];
