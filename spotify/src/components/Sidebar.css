@@ -240,7 +240,6 @@
   border-right: 10px solid #0d6bdc;
 }
 
-/* Hide Sidebar on mobile/tablet view */
 @media (max-width: 900px) {
   .sidebar {
     display: none !important;
